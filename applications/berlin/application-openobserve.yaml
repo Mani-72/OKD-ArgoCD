@@ -4,20 +4,19 @@ metadata:
   name: openobserve
   namespace: argocd
 spec:
-  destination:
-    name: ''
-    namespace: openobserve
-    server: 'https://kubernetes.default.svc'
   project: default
   source:
-    repoURL: https://github.com/openobserve/openobserve
-    targetRevision: HEAD
-    path: charts/helm-chart
+    repoURL: https://charts.openobserve.ai
+    chart: openobserve
+    targetRevision: 0.7.0 # or latest
     helm:
       values: |
         fullnameOverride: openobserve
         persistence:
           enabled: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openobserve
   syncPolicy:
     automated:
       prune: true
