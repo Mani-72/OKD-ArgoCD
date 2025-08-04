@@ -1,0 +1,10 @@
+replicaCount: 1
+
+persistence:
+  enabled: false
+
+service:
+  type: ClusterIP
+
+ingress:
+  enabled: false
