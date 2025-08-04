@@ -4,20 +4,23 @@ metadata:
   name: openobserve
   namespace: argocd
 spec:
+  destination:
+    name: ''
+    namespace: openobserve
+    server: 'https://kubernetes.default.svc'
   project: default
   source:
-    repoURL: https://github.com/Mani-72/OKD-ArgoCD.git
-    targetRevision: main
-    path: applications/berlin
+    repoURL: https://github.com/openobserve/openobserve
+    targetRevision: HEAD
+    path: charts/helm-chart
     helm:
-      valueFiles:
-        - values.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: openobserve
+      values: |
+        fullnameOverride: openobserve
+        persistence:
+          enabled: true
   syncPolicy:
     automated:
-      selfHeal: true
       prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
