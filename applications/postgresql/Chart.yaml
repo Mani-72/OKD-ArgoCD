@@ -1,0 +1,9 @@
+apiVersion: v2
+name: openobserve-postgresql-chart
+description: A Helm chart for PostgreSQL as a dependency
+version: 0.1.0
+appVersion: "15.5.5" # This is optional
+dependencies:
+  - name: postgresql
+    version: 15.5.5
+    repository: https://charts.bitnami.com/bitnami
