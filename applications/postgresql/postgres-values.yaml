@@ -1,0 +1,10 @@
+auth:
+  username: openobserve
+  password: openobserve123
+  database: openobserve
+
+primary:
+  persistence:
+    enabled: true
+    storageClass: standard  # ✅ Use Minikube's default StorageClass
+    size: 2Gi
