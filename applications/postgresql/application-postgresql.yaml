@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami
     chart: postgresql
-    targetRevision: 15.5.1
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 15.5.5
     helm:
       valueFiles:
-        - postgres-values.yaml
+        - applications/postgresql/postgres-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: openobserve
