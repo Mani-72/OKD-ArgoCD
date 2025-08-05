@@ -1,20 +1,19 @@
-auth:
-  username: openobserve
-  password: openobserve123
-  database: openobserve
-  enablePostgresUser: true
-
-primary:
-  persistence:
-    enabled: true
-    size: 5Gi
-    storageClass: standard  # ✅ 'standard' is the default in Minikube
-  resources:
-    requests:
-      memory: 128Mi
-      cpu: 100m
-    limits:
-      memory: 256Mi
-      cpu: 200m
-
-fullnameOverride: openobserve-pg
+postgresql:
+  auth:
+    username: openobserve
+    password: openobserve123
+    database: openobserve
+    enablePostgresUser: true
+  primary:
+    persistence:
+      enabled: true
+      size: 2Gi
+      storageClass: standard
+    resources:
+      requests:
+        memory: 128Mi
+        cpu: 100m
+      limits:
+        memory: 256Mi
+        cpu: 200m
+  fullnameOverride: openobserve-pg
