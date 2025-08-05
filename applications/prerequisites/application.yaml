@@ -1,20 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prerequisites
+  name: prerequisites-root
   namespace: argocd
 spec:
   project: default
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: argocd
   source:
     repoURL: https://github.com/Mani-72/OKD-ArgoCD.git
     targetRevision: main
     path: applications/prerequisites
-    directory:
-      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    automated: {}
