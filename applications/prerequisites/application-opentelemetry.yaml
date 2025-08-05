@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<your-username>/OKD-ArgoCD
+    repoURL: https://github.com/Mani-72/OKD-ArgoCD
     targetRevision: main
     path: applications/prerequisites/opentelemetry-operator
     kustomize: {}
